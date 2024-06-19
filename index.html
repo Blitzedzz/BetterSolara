@@ -6,36 +6,37 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script>
+
+	<script>
+        const pluginFilenames = [
+            	'pluginname.js',
+		'pluginname.js',
+		'pluginname.js',
+		'pluginname.js',
+		'pluginname.js',
+		'pluginname.js',
+        ];
+
         function loadAndExecutePlugins() {
             const pluginsFolder = './plugins/';
-            const maxPlugins = 90012309217846264871264124;
 
-            for (let i = 1; i <= maxPlugins; i++) {
-                const filename = `plugin${i}.js`;
+
+            pluginFilenames.forEach(filename => {
                 const scriptElement = document.createElement('script');
                 scriptElement.src = pluginsFolder + filename;
-                scriptElement.onload = () => console.log(`${filename} loaded successfully`);
-                scriptElement.onerror = () => console.warn(`${filename} failed to load`);
                 document.body.appendChild(scriptElement);
-            }
+            });
         }
 
         window.addEventListener('DOMContentLoaded', loadAndExecutePlugins);
     </script>
-    <script>
-        function loadAndExecutePlugins() {
-            const pluginsFolder = './themes/';
-            const maxPlugins = 1;
 
-            for (let i = 1; i <= maxPlugins; i++) {
-                const filename = `plugin${i}.js`;
+	<script>
+
+        function loadAndExecutePlugins() {
                 const scriptElement = document.createElement('script');
-                scriptElement.src = pluginsFolder + filename;
-                scriptElement.onload = () => console.log(`${filename} loaded successfully`);
-                scriptElement.onerror = () => console.warn(`${filename} failed to load`);
+                scriptElement.src = './themes/theme.js';
                 document.body.appendChild(scriptElement);
-            }
         }
 
         window.addEventListener('DOMContentLoaded', loadAndExecutePlugins);
